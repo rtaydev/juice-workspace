@@ -1,28 +1,57 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import ThemedButton from '@/components/ThemedButton';
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
+import HeartIcon from '@/components/icons/HeartIcon';
+import { useThemeColor } from '@/hooks/useThemeColor';
+
 // WelcomeScreen Component
-const WelcomeScreen = () => (
-  <ThemedView style={styles.container}>
-    <ThemedText type="title">Welcome to Juice Dating</ThemedText>
-    <Svg height="100" width="100" viewBox="0 0 100 100">
-      <Path d="M50 0 L100 100 L0 100 Z" fill="blue" />
-    </Svg>
-    <ThemedButton title="Login" onPress={() => {}} />
-    <ThemedButton title="Sign Up" onPress={() => {}} variant="text" />
-  </ThemedView>
-);
+const WelcomeScreen = () => {
+  const backgroundColor = useThemeColor({}, 'primary');
+  return (
+    <ThemedView style={[styles.container, { backgroundColor }]}>
+      <SafeAreaView style={{ flex: 1 }}>
+      <ThemedView style={styles.topSection}>
+        <ThemedText type="title" lightColor="#fff" darkColor="#fff">Juice Dating App</ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.middleSection}>
+        <HeartIcon width={100} height={100} />
+      </ThemedView>
+      <ThemedView style={styles.bottomSection}>
+        <ThemedButton title="Login" onPress={() => {}} darkColor="#fff" />
+        <ThemedButton title="Sign Up" onPress={() => {}} variant="text" />
+      </ThemedView>
+    </SafeAreaView>
+    </ThemedView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
     padding: 20,
+  },
+  topSection: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    marginTop: 20,
+  },
+  middleSection: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  bottomSection: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
   },
 });
 
