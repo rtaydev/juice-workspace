@@ -5,6 +5,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
 import HeartIcon from '@/components/icons/HeartIcon';
 import { useThemeColor } from '@/hooks/useThemeColor';
+import { router } from 'expo-router';
 
 // WelcomeScreen Component
 const WelcomeScreen = () => {
@@ -19,7 +20,7 @@ const WelcomeScreen = () => {
         <HeartIcon width={100} height={100} />
       </ThemedView>
       <ThemedView style={styles.bottomSection}>
-        <ThemedButton title="Login" onPress={() => {}} darkColor="#fff" />
+        <ThemedButton title="Login" onPress={() => router.push('/onboarding/login')} darkColor="#fff" />
         <ThemedButton title="Sign Up" onPress={() => {}} variant="text" />
       </ThemedView>
     </SafeAreaView>
