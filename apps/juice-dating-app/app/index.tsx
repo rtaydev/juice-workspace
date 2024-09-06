@@ -21,7 +21,7 @@ const WelcomeScreen = () => {
       </ThemedView>
       <ThemedView style={styles.bottomSection}>
         <ThemedButton title="Login" onPress={() => router.push('/onboarding/login')} darkColor="#fff" />
-        <ThemedButton title="Sign Up" onPress={() => {}} variant="text" />
+        <ThemedButton title="Sign Up" onPress={() => router.push('/onboarding/register/step1')} variant="text" />
       </ThemedView>
     </SafeAreaView>
     </ThemedView>
