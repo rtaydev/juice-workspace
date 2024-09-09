@@ -20,9 +20,11 @@ export const Colors = {
     secondary: '#0a7ea4',
     secondaryLight: '#3ca0c2',
     secondaryDark: '#065e7c',
+    secondaryInactive: '#0a7ea488',
     accent: '#ffc107',
     accentLight: '#ffd54f',
     accentDark: '#ffa000',
+    inactive: '#687076',
   },
   dark: {
     text: '#ECEDEE',
@@ -37,8 +39,10 @@ export const Colors = {
     secondary: '#0a7ea4',
     secondaryLight: '#3ca0c2',
     secondaryDark: '#065e7c',
+    secondaryInactive: '#0a7ea488',
     accent: '#ffc107',
     accentLight: '#ffd54f',
     accentDark: '#ffa000',
+    inactive: '#687076',
   },
 };

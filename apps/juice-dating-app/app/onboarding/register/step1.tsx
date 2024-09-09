@@ -63,7 +63,6 @@ const Step1Screen: React.FC = () => {
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
           <ThemedInput
-            style={styles.input}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -82,7 +81,6 @@ const Step1Screen: React.FC = () => {
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
           <ThemedInput
-            style={styles.input}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -102,7 +100,6 @@ const Step1Screen: React.FC = () => {
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
           <ThemedInput
-            style={styles.input}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -122,7 +119,6 @@ const Step1Screen: React.FC = () => {
         control={control}
         render={({ field: { onChange, onBlur, value } }) => (
           <ThemedInput
-            style={styles.input}
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -138,7 +134,7 @@ const Step1Screen: React.FC = () => {
         <Text style={styles.errorText}>{errors.confirmPassword.message}</Text>
       )}
 
-      <ThemedButton title="Next" onPress={handleSubmit(onSubmit)} />
+      <ThemedButton title="Continue" onPress={handleSubmit(onSubmit)} />
     </ThemedView>
   );
 };
@@ -147,13 +143,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-  },
-  input: {
-    height: 40,
-    borderColor: "gray",
-    borderWidth: 1,
-    marginBottom: 10,
-    paddingHorizontal: 10,
   },
   errorText: {
     color: "red",
