@@ -16,12 +16,15 @@ interface ThemedButtonProps {
 const ThemedButton: React.FC<ThemedButtonProps> = ({ onPress, title, variant = 'default', style, lightColor, darkColor, ...rest }) => {
   const primaryColor = useThemeColor({ light: lightColor, dark: darkColor }, 'primary');
 
+  const backgroundColor = lightColor ? primaryColor : darkColor ? '#fff' : primaryColor;
+  const textColor = lightColor ? '#fff' : darkColor ? primaryColor : '#fff';
+
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[
         styles.button,
-        variant === 'default' && { backgroundColor: primaryColor },
+        variant === 'default' && { backgroundColor },
         variant === 'text' && styles.textButton,
         style
       ]}
@@ -30,7 +33,8 @@ const ThemedButton: React.FC<ThemedButtonProps> = ({ onPress, title, variant = '
       <ThemedText
         style={[
           styles.buttonText,
-          variant === 'text' && { color: primaryColor },
+          variant === 'text' && { color: textColor },
+          variant === 'default' && { color: textColor },
         ]}
       >
         {title}
@@ -49,8 +53,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
-    color: '#fff',
     fontSize: 18,
+    fontWeight: 600,
   }, 
   textButton: {
     backgroundColor: 'transparent',
